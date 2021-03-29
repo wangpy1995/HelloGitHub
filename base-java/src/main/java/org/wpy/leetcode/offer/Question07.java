@@ -1,5 +1,7 @@
 package org.wpy.leetcode.offer;
 
+import org.wpy.leetcode.common.TreeNode;
+
 /**
  * 输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
  * <p>
@@ -24,15 +26,6 @@ package org.wpy.leetcode.offer;
  */
 
 public class Question07 {
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         if (preorder == null || preorder.length == 0) {

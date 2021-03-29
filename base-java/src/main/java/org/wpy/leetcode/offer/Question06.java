@@ -1,5 +1,7 @@
 package org.wpy.leetcode.offer;
 
+import org.wpy.leetcode.common.ListNode;
+
 import java.util.Arrays;
 
 /**
@@ -18,15 +20,6 @@ import java.util.Arrays;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class Question06 {
-
-    private static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
 
     public int[] reversePrint(ListNode head) {
         if (head == null) {

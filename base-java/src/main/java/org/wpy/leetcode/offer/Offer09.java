@@ -2,12 +2,12 @@ package org.wpy.leetcode.offer;
 
 import java.util.LinkedList;
 
-public class Question09 {
+public class Offer09 {
 
     private LinkedList<Integer> stack1=new LinkedList<>();
     private LinkedList<Integer> stack2=new LinkedList<>();
 
-    public Question09(){
+    public Offer09(){
     }
 
     public void appendTail(int value) {

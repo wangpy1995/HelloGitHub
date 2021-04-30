@@ -17,7 +17,7 @@ package org.wpy.leetcode.offer;
  * 链接：https://leetcode-cn.com/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Question58_II {
+public class Offer58_II {
     public String reverseLeftWords(String s, int n) {
         if (s == null || n == 0) {
             return s;
@@ -32,6 +32,6 @@ public class Question58_II {
     public static void main(String[] args) {
         String s = "abcdefg";
         int k = 2;
-        System.out.println(new Question58_II().reverseLeftWords(s, k));
+        System.out.println(new Offer58_II().reverseLeftWords(s, k));
     }
 }

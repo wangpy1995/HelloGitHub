@@ -29,7 +29,7 @@ import org.wpy.leetcode.common.TreeNode;
  * 链接：https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Question27 {
+public class Offer27 {
 
     public TreeNode mirrorTree(TreeNode root) {
         if (root == null || (root.left == null && root.right == null)) {
@@ -58,7 +58,7 @@ public class Question27 {
         node2.left = node5;
         node2.right = node6;
 
-        new Question27().mirrorTree(root);
+        new Offer27().mirrorTree(root);
         System.out.println(root);
     }
 }

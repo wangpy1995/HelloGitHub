@@ -1,6 +1,6 @@
 package org.wpy.leetcode.offer;
 
-public class Question03 {
+public class Offer03 {
     public int findRepeatNumber(int[] nums) {
         if (nums == null) {
             return -1;
@@ -30,6 +30,6 @@ public class Question03 {
 
     public static void main(String[] args) {
         int[] testNums = new int[]{2, 3, 1, 0, 3, 2, 5};
-        System.out.println(new Question03().findRepeatNumber(testNums));
+        System.out.println(new Offer03().findRepeatNumber(testNums));
     }
 }

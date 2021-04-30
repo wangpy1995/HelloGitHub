@@ -19,7 +19,7 @@ import java.util.Arrays;
  * 链接：https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Question06 {
+public class Offer06 {
 
     public int[] reversePrint(ListNode head) {
         if (head == null) {
@@ -52,6 +52,6 @@ public class Question06 {
         ListNode node3 = new ListNode(2);
         node1.next = node2;
         node2.next= node3;
-        System.out.println(Arrays.toString(new Question06().reversePrint(node1)));
+        System.out.println(Arrays.toString(new Offer06().reversePrint(node1)));
     }
 }

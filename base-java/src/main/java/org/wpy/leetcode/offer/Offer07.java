@@ -25,7 +25,7 @@ import org.wpy.leetcode.common.TreeNode;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-public class Question07 {
+public class Offer07 {
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         if (preorder == null || preorder.length == 0) {

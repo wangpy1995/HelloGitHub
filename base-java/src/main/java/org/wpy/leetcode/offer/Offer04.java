@@ -20,7 +20,7 @@ package org.wpy.leetcode.offer;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-public class Question04 {
+public class Offer04 {
 
     public boolean findNumberIn2DArray(int[][] matrix, int target) {
         if (matrix == null) {
@@ -57,7 +57,7 @@ public class Question04 {
                 {3, 6, 9, 16, 22, 25},
                 {10, 13, 14, 17, 24, 32},
                 {18, 21, 23, 26, 30, 41}};
-        Question04 q = new Question04();
+        Offer04 q = new Offer04();
         System.out.println(q.findNumberIn2DArray(matrix, 25));
     }
 }

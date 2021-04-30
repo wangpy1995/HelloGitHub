@@ -22,7 +22,7 @@ import java.util.Stack;
  * 链接：https://leetcode-cn.com/problems/er-cha-shu-de-shen-du-lcof
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
-public class Question55_I {
+public class Offer55_I {
 
     public int maxDepth(TreeNode root) {
         if (root == null) {
@@ -70,7 +70,7 @@ public class Question55_I {
 //        node1.right = node4;
         node2.left = node5;
         node2.right = node6;
-        Question55_I q = new Question55_I();
+        Offer55_I q = new Offer55_I();
 
         System.out.println(q.maxDepth(root));
     }

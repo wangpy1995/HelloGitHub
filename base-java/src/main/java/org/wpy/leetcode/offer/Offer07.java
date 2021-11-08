@@ -1,6 +1,12 @@
 package org.wpy.leetcode.offer;
 
+import org.w3c.dom.ranges.Range;
 import org.wpy.leetcode.common.TreeNode;
+import scala.reflect.internal.Trees;
+
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * 输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
@@ -31,20 +37,34 @@ public class Offer07 {
         if (preorder == null || preorder.length == 0) {
             return null;
         }
-        if (preorder.length == 1) {
-            return new TreeNode(preorder[0]);
-        }
-        TreeNode head = new TreeNode(preorder[0]);
-        for (int i = 0; i < inorder.length; i++) {
-            if(inorder[i]==preorder[0]){
-                if(i+1<inorder.length){
-                    head.right = new TreeNode(inorder[i+1]);
+        TreeNode root = new TreeNode(preorder[0]);
+        Deque<TreeNode> stack = new LinkedList<>();
+        stack.push(root);
+        int inorderIndex = 0;
+        for (int i = 1; i < preorder.length; i++) {
+            int preorderVal = preorder[i];
+            TreeNode node = stack.peek();
+            if (node != null && node.val != inorder[inorderIndex]) {
+                node.left = new TreeNode(preorderVal);
+                stack.push(node.left);
+            } else {
+                while (!stack.isEmpty() && stack.peek().val == inorder[inorderIndex]) {
+                    node = stack.pop();
+                    inorderIndex++;
                 }
-                if(i>=1){
-                    head.left = new TreeNode(inorder[i-1]);
+                if(node!=null) {
+                    node.right = new TreeNode(preorderVal);
+                    stack.push(node.right);
                 }
             }
         }
-        return head;
+        return root;
+    }
+
+    public static void main(String[] args) {
+        int[] preorder = {1,2,3};
+        int[] inorder = {3,2,1};
+        TreeNode root = new Offer07().buildTree(preorder, inorder);
+        TreeNode.show(root);
     }
 }

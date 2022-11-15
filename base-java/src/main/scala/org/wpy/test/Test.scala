@@ -21,9 +21,9 @@ object Test {
 
     try {
       MyHttpClient.flushPV("http://bb8.news/portal.php?x=890796",
-        (response, _) =>
+        (response,client) =>
           println(EntityUtils.toString(response.getEntity, "utf8")),
-        proxySetter)
+        proxySetter, useSocksProxy = false)
     } catch {
       case e: Exception => println(e.getMessage)
     }

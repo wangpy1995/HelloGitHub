@@ -19,7 +19,6 @@ import java.net.{InetSocketAddress, Socket, SocketTimeoutException}
 import java.util.logging.{Level, Logger}
 import java.util.stream.Collectors
 import scala.collection.JavaConverters._
-import scala.collection.immutable
 import scala.io.Codec
 import scala.reflect.io.File
 
@@ -29,7 +28,7 @@ class SocksConnectionSocketFactory extends ConnectionSocketFactory {
     val socksaddr = context.getAttribute("socks.addr").asInstanceOf[InetSocketAddress]
     // socket代理
     val proxy = new java.net.Proxy(java.net.Proxy.Type.SOCKS, socksaddr)
-    new Socket(proxy)
+    new Socket(proxy);
   }
 
   override def connectSocket(connectTimeout: Int, sock: Socket, host: HttpHost, remoteAddress: InetSocketAddress, localAddress: InetSocketAddress, context: HttpContext): Socket = {
@@ -53,16 +52,16 @@ class SocksConnectionSocketFactory extends ConnectionSocketFactory {
 }
 
 object MyHttpClient{
-  val log: Logger = Logger.getLogger(this.getClass.getName)
+  val log = Logger.getLogger(this.getClass.getName)
 
-  def saveProxyIp(host: String, port: Int, saveFunc: (String, Int) => Unit): Unit = {
+  def saveProxyIp(host: String, port: Int, saveFunc: (String, Int) => Unit) = {
     saveFunc(host, port)
   }
 
   def flushPV[T](url: String,
                  responseOperator: (CloseableHttpResponse, HttpClient) => T,
-                 proxySetter: HttpClientBuilder => HttpClientBuilder = null,
-                 useSocksProxy: Boolean = false): T = {
+                 proxySetter: (HttpClientBuilder) => HttpClientBuilder = null,
+                 useSocksProxy: Boolean = false) = {
     val clientBuilder = HttpClients.custom()
     clientBuilder.setRetryHandler(new DefaultHttpRequestRetryHandler(2, false))
     clientBuilder.setSSLContext(SSLContexts.custom().loadTrustMaterial(TrustAllStrategy.INSTANCE).build())
@@ -104,7 +103,7 @@ object MyHttpClient{
     }
   }
 
-  def simpleSplit(range: Range, n: Int): immutable.Seq[Range] = {
+  def simpleSplit(range: Range, n: Int) = {
     val step = (range.end + (n - 1) * range.step - range.start) / (n * range.step)
     0 until n map { i =>
       val start = range.start + step * i * range.step
@@ -112,7 +111,7 @@ object MyHttpClient{
     }
   }
 
-  def flushWebPage(proxyAddrs: Seq[(String, Int)]): Seq[(String, Int)] = {
+  def flushWebPage(proxyAddrs: Seq[(String, Int)]) = {
     proxyAddrs.map {
       case (host, port) =>
         try {
